@@ -7,6 +7,9 @@ const app = express();
 //setup static folder
 app.use(express.static(path.join(__dirname, 'public')))
 
+//body parser middleware
+app.use(express.json()) // this for raws in body
+app.use(express.urlencoded({extended : false})) // this for urlencoded in body
 
 app.use('/api/posts',posts)
 
