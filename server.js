@@ -9,10 +9,10 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')))
 
 //body parser middleware
-app.use(express.json()) // this for raws in body
-app.use(express.urlencoded({extended : false})) // this for urlencoded in body
+app.use(express.json()); // for JSON bodies
+app.use(express.urlencoded({ extended: false })); // for form-urlencoded
 
-
+//middleware color packer
 app.use(logger)
 
 app.use('/api/posts',posts)
